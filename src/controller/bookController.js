@@ -53,7 +53,7 @@ const createBook = async function (req, res) {
             return res.status(400).send({ status: false, message: ' ISBN is required' })
         }
 
-        //                    (isbn unique check)
+        // (isbn unique check)
         let ISBNCheck = await bookModel.findOne({ ISBN: requestBody.ISBN })
         if (ISBNCheck) {
             return res.status(400).send({ status: false, message: "ISBN already exist" })

@@ -70,7 +70,7 @@ const createUser = async function (req, res) {
         }
 
         if (!validator.isValidPassword(requestBody.password)) {
-            return res.status(400).send({ status: false, message: 'password should contain atleast 1 letter & 1 number' })
+            return res.status(400).send({ status: false, message: 'Password should contain atleast One Upper case, one special character one number and one lowercase' })
         }
 
         // ADDRESS VALIDATION

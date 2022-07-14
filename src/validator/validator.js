@@ -24,8 +24,10 @@ const isValidEmail = function (email) {
     return (/^[a-z0-9]+@[a-z]+\.[a-z]{2,3}/.test(email.trim()))
 }
 
-const isValidPassword = function (password) {
-    return (/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,15}$/.test(password))
+function isValidPassword(password)
+{
+    var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,15}$/;
+    return re.test(password);
 }
 
 const isValidStreet = function (address){
